@@ -1,6 +1,8 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -15,6 +17,13 @@ namespace Business.Constants
         public static string ProductsListed = "Products are listed";
         public static string ProductCountOfCategoryError = "There can be at most 10 products.";
         public static string ProductNameAlreadyExists = "Product name already exists!";
+        public static string AuthorizationDenied = "Authorization denied!";
+        public static string UserRegistered = "Successfully registered.";
+        public static string UserNotFound = "User not found!";
+        public static string SuccessfulLogin = "Successfully logged in.";
+        public static string UserAlreadyExists = "User already exists.";
+        public static string PasswordError = "Password error.";
+        public static string AccessTokenCreated = "Access token created.";
         //publicler pascal case yazilir.
     }
 }

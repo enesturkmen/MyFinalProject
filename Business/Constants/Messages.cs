@@ -24,6 +24,7 @@ namespace Business.Constants
         public static string UserAlreadyExists = "User already exists.";
         public static string PasswordError = "Password error.";
         public static string AccessTokenCreated = "Access token created.";
+        public static string CategoryLimitExceded = "Category limit is exceded.";
         //publicler pascal case yazilir.
     }
 }

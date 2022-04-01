@@ -31,13 +31,12 @@ namespace Business.Concrete
             _productDal = productDal;
         }
 
-        [SecuredOperation("product.add, admin")]
+        [SecuredOperation("product.add, admin, product.getall")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
             IResult result = BusinessRules.Run(CheckIfProductNameExists(product.ProductName),
-                                               CheckIfProductCountOfCategory(product.CategoryId),
-                                               CheckIfCategoryLimitExceded());
+                                               CheckIfProductCountOfCategory(product.CategoryId));
 
             if (result != null)
             {
@@ -99,14 +98,15 @@ namespace Business.Concrete
             return new SuccessResult();
 
         }
-        private IResult CheckIfCategoryLimitExceded()
-        {
-            var result = _categoryService.GetAll();
-            if (result.Data.Count > 15)
-            {
-                return new ErrorResult(Messages.ProductNameAlreadyExists);
-            }
-            return new SuccessResult();
-        }
+        //private IResult CheckIfCategoryLimitExceded()
+        //{
+        //    var result = _categoryService.GetAll();
+        //    if (result.Data.Count > 15)
+        //    {
+        //        return new ErrorResult(Messages.CategoryLimitExceded);
+        //    }
+
+        //    return new SuccessResult();
+        //}
     }
 }

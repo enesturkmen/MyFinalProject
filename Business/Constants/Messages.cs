@@ -25,6 +25,8 @@ namespace Business.Constants
         public static string PasswordError = "Password error.";
         public static string AccessTokenCreated = "Access token created.";
         public static string CategoryLimitExceded = "Category limit is exceded.";
+        public static string ProductUpdated = "Product updated.";
+        public static string ProductDeleted = "Product deleted.";
         //publicler pascal case yazilir.
     }
 }
